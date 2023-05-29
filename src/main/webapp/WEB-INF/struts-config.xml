@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+
+<struts-config>
+
+   <form-beans>
+      <form-bean
+            name="ListarCandidatoForm"
+            type="br.com.jsn.form.ListarCandidatoForm"/>
+            
+        <form-bean
+            name="RegistrarCandidatoForm"
+            type="br.com.jsn.form.RegistrarCandidatoForm"/>
+        
+    
+    </form-beans>
+    
+      <global-forwards>
+ 
+        <forward name="registrarCandidato" path="/registrarCandidato.do" />
+        <forward name="listarCandidato" path="/listarCandidato.do"/>
+    </global-forwards>
+    
+    
+    <action-mappings>
+    
+    
+    
+        <action path="/listarCandidato"
+                type="br.com.jsn.action.ListarCandidatoAction"
+                name="ListarCandidatoForm"
+                scope="request"
+                validate="false" 
+                input="/listarCandidato.jsp"/>
+    
+        <action path="/registrarCandidato"
+                type="br.com.jsn.action.RegistrarCandidatoAction"
+                name="RegistrarCandidatoForm"
+                scope="request"
+                validate="false"
+                input="/registrarCandidato.jsp" />
+
+     
+     
+    </action-mappings>
+    
+  
+</struts-config>
